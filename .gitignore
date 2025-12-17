@@ -1,0 +1,304 @@
+.env
+.env.local
+.env.*.local
+*.key
+*_key.txt
+secrets/
+credentials/
+api_keys/
+
+# API Keys (be extra careful)
+*apikey*
+*api_key*
+*APIKEY*
+*API_KEY*
+tavily*.key
+openai*.key
+news*.key
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+.python-version
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# UV package manager
+.uv/
+
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+.nuxt/
+
+# Testing
+coverage/
+.nyc_output
+
+# Production
+*.tsbuildinfo
+next-env.d.ts
+
+# Package managers
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Lock files (optional - uncomment if you want to track them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Temporary folders
+tmp/
+temp/
+
+
+# Cost tracking logs
+cost_log.json
+cost_log_*.json
+usage_log.json
+token_log.json
+
+# Generated reports (PDFs)
+reports/
+*.pdf
+research_report_*.pdf
+
+# Session data
+sessions/
+*.session
+
+# Vector stores / embeddings
+*.faiss
+*.index
+embeddings/
+vector_store/
+faiss_index/
+
+# Research outputs
+outputs/
+research_outputs/
+generated_reports/
+
+# Uploaded files
+uploads/
+user_uploads/
+
+# Cache files
+.cache/
+*.cache
+__cache__/
+sentence_transformers/
+
+*.log
+logs/
+*.log.*
+log_*.txt
+debug.log
+error.log
+
+*.db
+*.sqlite
+*.sqlite3
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# PyCharm / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bz2
+*.gz
+*.xz
+
+# Exception: keep release archives
+!releases/*.zip
+!releases/*.tar.gz
+
+.pytest_cache/
+.benchmarks/
+test_outputs/
+test_reports/
+*.test.log
+
+docker-compose.override.yml
+
+*.bak
+*.backup
+*.old
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+*.pem
+*.crt
+*.key
+*.cert
+
+!example_*.csv
+!example_*.json
+!sample_*.json
+
+!.env.example
+!.env.template
+!example.config.json
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+!.gitignore

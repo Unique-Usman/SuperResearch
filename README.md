@@ -607,6 +607,12 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
 **Per Research**: $0.016  
 **Capacity**: ~318 complete researches
 
+### Cost Estimation Strategy
+
+I was able to estimate the code from OpenAI response as I said above.
+The response give the number of tokens and I already know that token price
+for the model which I am using gpt-4o-mini. So, that is I estimate the cost.
+
 ### Cost Distribution
 
 | Component         | Cost    | Percentage |
@@ -650,7 +656,28 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
 
 ### Cost Optimization Strategies
 
-**What We Did:**
+#### My initial Thought process.
+
+My strategy was basically to avoid any unecessary calls to the LLM and using some other approach.
+
+The only place where I used model was when generating multiple questions from the initial question based on context the user wants.
+
+I could have used an opensource model here to sort reduce the cost but indirectly opensource models will need some gpu to process and
+are much less better compare to something like OpenAI model (from experience working on an OpenSource powered agentic AI supervaani).
+The place where I used model is where I am generating the final research.
+
+One important approach which I used is that after generating the sub queries, I let the I used some online search like Tavily to
+retrieve data or information, instead of directly passing to the LLM, I embeded all the documents and used the combination of all
+questions to retrieve most relevant docs( a fix tokens ) which is then used to generate the final answer. I avoid using something like
+MCP, ReAct agent or passing tools to LLM. The main reason is that this uses more tokens and involve lot of calls to the API. What I
+basically do is that I sort of make the whole orchestration constant and definite instead allowing the model decide i.e.
+And I sort defined maximum tokens also for each generation to prevent the LLM from generating more and using more tokens.
+One things I also did was that for the feedback, instead of using one API call for final generation, I spread the API call
+accross multiple section and also I store the final generation so that when the user give a feedback the LLM does not start
+from the begining and also if the feedback required the LLM to generate just one section(i.e make the conclusion concise),
+I would not have to generate every section from scratch again.
+
+**What I Did:**
 
 1. ✅ **gpt-4o-mini** (60x cheaper than GPT-4)
    - Saved ~$0.96 per research
@@ -671,6 +698,9 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
    - Tavily free tier
    - ArXiv/Wikipedia unlimited
 
+7. Avoiding using Tools and MCP as they require thinking and consume more token.
+   I was able to get better result by making my whole architecture sort of fixed.
+
 **What I Avoided:**
 
 1. ✗ **GPT-4**: $0.96 per research (60x more expensive)
@@ -678,6 +708,7 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
 3. ✗ **Pinecone**: +$70/month base cost
 4. ✗ **Full re-research on feedback**: Would double iteration costs
 5. ✗ **Excessive retries**: Limited to 2 attempts per operation
+6. Using Tools, MCP and ReAct agent - this leads to many use of too much tokens.
 
 ### Cost Comparison
 
@@ -693,9 +724,9 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
 
 ### Estimated Project Spend
 
-Question one -> $0.0010 and Input Token 1539, Ouput Token 1220
-Question Two -> $0.0010 and Input Token 1226, Output Token 1333
-Question Three -> $0.0034 and Input Token 4380 and Ouput Token 4612
+** Question one -> $0.0010 and Input Token 1539, Ouput Token 1220 **
+** Question Two -> $0.0010 and Input Token 1226, Output Token 1333 **
+** Question Three -> $0.0034 and Input Token 4380 and Ouput Token 4612 **
 
 ---
 

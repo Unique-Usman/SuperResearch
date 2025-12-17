@@ -145,11 +145,6 @@ cost_log_*.json
 usage_log.json
 token_log.json
 
-# Generated reports (PDFs)
-reports/
-*.pdf
-research_report_*.pdf
-
 # Session data
 sessions/
 *.session

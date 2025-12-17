@@ -671,7 +671,7 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
    - Tavily free tier
    - ArXiv/Wikipedia unlimited
 
-**What We Avoided:**
+**What I Avoided:**
 
 1. ✗ **GPT-4**: $0.96 per research (60x more expensive)
 2. ✗ **OpenAI embeddings**: +$0.003 per research
@@ -693,18 +693,9 @@ data: {"type":"complete","session_id":"abc-123","report":"...","sections":{...},
 
 ### Estimated Project Spend
 
-**Development & Testing**: $0.25 - $0.50
-
-- 15-30 test researches
-- Various context types
-- Feedback iterations
-
-**Production Usage**: $1.50 - $3.00
-
-- 100-200 actual researches
-- Well within $5 budget
-
-**Total**: ~$2.00 out of $5.00 budget ✅
+Question one -> $0.0010 and Input Token 1539, Ouput Token 1220
+Question Two -> $0.0010 and Input Token 1226, Output Token 1333
+Question Three -> $0.0034 and Input Token 4380 and Ouput Token 4612
 
 ---
 
